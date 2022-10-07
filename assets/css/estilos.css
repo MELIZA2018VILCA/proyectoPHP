@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: sons-serif;
+}
+body
+{
+    background-image: url(../images/b.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+main
+{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+.contenedor__todo
+{
+width: 100%;
+max-width: 800xp;
+margin: relative;
+}
+
+.caja__trasera
+{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+
+}
