@@ -25,12 +25,12 @@ if (isset($_SESSION["user_email"])) {
                     <h4 >usuarios</h4>
                     <div class="form-floating mb-3">
                         <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
+                        <label for="floatingInput">correo electronico</label>
                     </div>
                     <h4>contraseña</h4>
                     <div class="form-floating mb-3">
                          <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
+                        <label for="floatingPassword">contraseña</label>
                     </div>
                     <button name="submit" class="w-100 btn btn-lg btn-primary" type="submit">Continue</button>
                     <hr class="my-4">
