@@ -18,19 +18,18 @@ if (isset($_POST["updateTodo"])) {
     $title = mysqli_real_escape_string($conn, $_POST["title"]);
     $desc = mysqli_real_escape_string($conn, $_POST["desc"]);
 
-    // Updating todo
+
     $sql = "UPDATE todos SET title='{$title}', description='{$desc}', date=CURRENT_TIMESTAMP WHERE id='{$todoId}'";
     $res = mysqli_query($conn, $sql);
     if ($res) {
         $_POST["title"] = "";
         $_POST["desc"] = "";
-        $msg = "<div class='alert alert-success'>Todo is updated.</div>";
+        $msg = "<div class='alert alert-success'>tareas actualizadas.</div>";
     } else {
-        $msg = "<div class='alert alert-danger'>Todo is not updated.</div>";
+        $msg = "<div class='alert alert-danger'>tareas no actualizadas.</div>";
     }
 }
 
-// Get User Id based on user email
 $sql = "SELECT id FROM users WHERE email='{$_SESSION["user_email"]}'";
 $res = mysqli_query($conn, $sql);
 $count = mysqli_num_rows($res);
@@ -66,22 +65,22 @@ if (mysqli_num_rows($res) > 0) {
             <div class="col-md-5 mx-auto">
                 <div class="card bg-white rounded border shadow">
                     <div class="card-header px-4 py-3">
-                        <h4 class="card-title">Edit Todo</h4>
+                        <h4 class="card-title">Editar tarea</h4>
                     </div>
                     <div class="card-body p-4">
                         <?php echo $msg; ?>
                         <form action="" method="POST">
                             <div class="mb-3">
-                                <label for="title" class="form-label">Title</label>
+                                <label for="title" class="form-label">Editar nombre de la tarea</label>
                                 <input type="text" class="form-control" id="title" name="title" placeholder="e.g. Create a PHP program" value="<?php echo $todoData['title']; ?>" required>
                             </div>
                             <div class="mb-3">
-                                <label for="desc" class="form-label">Description</label>
+                                <label for="desc" class="form-label">Editar descripción</label>
                                 <textarea class="form-control" id="desc" name="desc" rows="3" required><?php echo $todoData['description']; ?></textarea>
                             </div>
                             <div>
-                                <button type="submit" name="updateTodo" class="btn btn-primary me-2">Update Todo</button>
-                                <button type="reset" class="btn btn-danger">Reset</button>
+                                <button type="submit" name="updateTodo" class="btn btn-primary me-2">Actualizar Tareas</button>
+                                <button type="reset" class="btn btn-danger">Actualizar</button>
                             </div>
                         </form>
                     </div>

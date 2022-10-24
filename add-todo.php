@@ -12,7 +12,7 @@ if (isset($_POST["addTodo"])) {
     $title = mysqli_real_escape_string($conn, $_POST["title"]);
     $desc = mysqli_real_escape_string($conn, $_POST["desc"]);
 
-    // Get User Id based on user email
+   
     $sql = "SELECT id FROM users WHERE email='{$_SESSION["user_email"]}'";
     $res = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($res);
@@ -24,7 +24,7 @@ if (isset($_POST["addTodo"])) {
     }
     $sql = null;
 
-    // Inserting todo
+   
     $sql = "INSERT INTO todos (title, description, user_id) VALUES ('$title', '$desc', '$user_id')";
     $res = mysqli_query($conn, $sql);
     if ($res) {
@@ -54,26 +54,27 @@ if (isset($_POST["addTodo"])) {
             <div class="col-md-5 mx-auto">
                 <div class="card bg-white rounded border shadow">
                     <div class="card-header px-4 py-3">
-                        <h4 class="card-title">Add Todo</h4>
+                        <h4 class="card-title">AÑADIR TAREAS</h4>
                     </div>
                     <div class="card-body p-4">
                         <?php echo $msg; ?>
                         <form action="" method="POST">
                             <div class="mb-3">
-                                <label for="title" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="title" name="title" placeholder="e.g. Create a PHP program" value="<?php if (isset($_POST["addTodo"])) {
+                                <label for="title" class="form-label">NOMBRE DE LA TAREA</label>
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Creación de mi aplicación" value="<?php if (isset($_POST["addTodo"])) {
                                                                                                                                                     echo $_POST["title"];
                                                                                                                                                 } ?>" required>
                             </div>
                             <div class="mb-3">
-                                <label for="desc" class="form-label">Description</label>
+                                <label for="desc" class="form-label">DESCRIPCIÓN </label>
                                 <textarea class="form-control" id="desc" name="desc" rows="3" required><?php if (isset($_POST["addTodo"])) {
                                                                                                             echo $_POST["title"];
                                                                                                         } ?></textarea>
                             </div>
                             <div>
-                                <button type="submit" name="addTodo" class="btn btn-primary me-2">Add Todo</button>
-                                <button type="reset" class="btn btn-danger">Reset</button>
+                                <button type="submit" name="addTodo"  class="btn btn-primary me-2">Añadir tarea</button>
+                                <button type="reset" class="btn btn-danger">
+                                    Actualizar</button>
                             </div>
                         </form>
                     </div>

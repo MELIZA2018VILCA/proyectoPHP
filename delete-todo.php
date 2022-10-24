@@ -9,7 +9,7 @@ if (!isset($_SESSION["user_email"])) {
 if (isset($_GET["id"])) {
     $todoId = mysqli_real_escape_string($conn, $_GET["id"]);
 
-    // Get User Id based on user email
+ 
     $sql = "SELECT id FROM users WHERE email='{$_SESSION["user_email"]}'";
     $res = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($res);

@@ -4,12 +4,18 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
+    
 }
 
 body{
-    background-image: url(../images/bg4.jpg);
+  
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+   
+}
+
+form{
+    border: 10px;
 }

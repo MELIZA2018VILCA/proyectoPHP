@@ -84,11 +84,6 @@ function getHead()
     echo $output;
 }
 
-
-/* ====================================================== */
-/* Get Header function */
-/* ====================================================== */
-
 function getHeader()
 {
     $output = '<header class="py-3 mb-4 border-bottom bg-white">
@@ -108,10 +103,7 @@ function getHeader()
     echo $output;
 }
 
-
-/* ====================================================== */
-/* Text Limit function */
-/* ====================================================== */
+ ====================================================== */
 
 function textLimit($string, $limit)
 {
@@ -123,10 +115,6 @@ function textLimit($string, $limit)
 }
 
 
-
-/* ====================================================== */
-/* Get Todo function */
-/* ====================================================== */
 
 function getTodo($todo)
 {
@@ -147,11 +135,6 @@ function getTodo($todo)
     echo $output;
 }
 
-
-
-/* ====================================================== */
-/* Dynamic Title function */
-/* ====================================================== */
 
 function dynamicTitle()
 {

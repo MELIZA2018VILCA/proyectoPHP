@@ -22,7 +22,7 @@ if (!isset($_SESSION["user_email"])) {
         <div class="row">
             <?php
             $todoId = mysqli_real_escape_string($conn, $_GET["id"]);
-            // Get User Id based on user email
+            
             $sql = "SELECT id FROM users WHERE email='{$_SESSION["user_email"]}'";
             $res = mysqli_query($conn, $sql);
             $count = mysqli_num_rows($res);
@@ -42,8 +42,8 @@ if (!isset($_SESSION["user_email"])) {
                         <p class="fs-5 col-md-8"><?php echo $todo["description"]; ?></p>
 
                         <div class="mb-5">
-                            <a href="<?php echo 'edit-todo.php?id='. $todo['id']; ?>" class="btn btn-primary btn-lg px-4 me-2">Edit</a>
-                            <a href="<?php echo 'delete-todo.php?id='. $todo['id']; ?>" class="btn btn-danger btn-lg px-4">Delete</a>
+                            <a href="<?php echo 'edit-todo.php?id='. $todo['id']; ?>" class="btn btn-primary btn-lg px-4 me-2">editar</a>
+                            <a href="<?php echo 'delete-todo.php?id='. $todo['id']; ?>" class="btn btn-danger btn-lg px-4">eliminar</a>
                         </div>
                     </main>
             <?php }
