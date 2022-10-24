@@ -18,7 +18,7 @@ if (isset($_POST["submit"])) {
             header("Location: todos.php");
             die();
         } else {
-            echo "<script>alert('Login details is invalid.');window.location.replace('index.php');</script>";
+            echo "<script>alert('Los datos de inicio de sesión no son válidos.');window.location.replace('index.php');</script>";
         }
     } else {
         $user_registration = createUser($email, $password);
