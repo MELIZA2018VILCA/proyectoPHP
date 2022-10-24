@@ -19,10 +19,10 @@ if (!isset($_SESSION["user_email"])) {
 <body>
     <?php getHeader(); ?>
     <div class="container">
-        <h1 class="mb-4 text-center fw-bold">Your Todos</h1>
+        <h1 class="mb-4 text-center fw-bold">Tus tareas</h1>
         <div class="row">
             <?php 
-            // Get User Id based on user email
+    
             $sql = "SELECT id FROM users WHERE email='{$_SESSION["user_email"]}'";
             $res = mysqli_query($conn, $sql);
             $count = mysqli_num_rows($res);
@@ -40,7 +40,7 @@ if (!isset($_SESSION["user_email"])) {
             <div class="col-lg-3 col-md-6 mb-4">
                 <?php getTodo($todo); ?>
             </div>
-            <?php } } else { echo "<h1 class='text-danger text-center fw-bold'>Todos are not available!</h1>"; } ?>
+            <?php } } else { echo "<h1 class='text-danger text-center fw-bold'>Tareas no disponibles!</h1>"; } ?>
         </div>
     </div>
 
